@@ -1,6 +1,8 @@
 from flask import *
+from flask_bootstrap5 import Bootstrap
 
 app = Flask(__name__)
+bootstrap = Bootstrap(app)
 
 
 @app.route('/')

@@ -1,21 +1,11 @@
-# 导入flask项目
-from flask import *
+from flask import Flask
 
-# 实例化flask
 app = Flask(__name__)
 
 
-@app.route('/')  #
+@app.route('/')
 def hello_world():  # put application's code here
     return 'Hello World!'
-
-
-@app.route('/login')
-def login():
-    return "你好"
-
-
-
 
 
 if __name__ == '__main__':

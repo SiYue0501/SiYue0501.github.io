@@ -15,9 +15,7 @@ def login():
     return "你好"
 
 
-@app.route('/register')
-def register():
-    return render_template('index.html', **locals())
+
 
 
 if __name__ == '__main__':

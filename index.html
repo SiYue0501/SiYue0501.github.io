@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>首页</title>
+    <link rel="stylesheet" href="static/plugins/bootstrap-5.0.0/css/bootstrap.css">
+    <link rel="stylesheet" href="static/plugins/bootstrap-5.0.0/js/bootstrap.bundle.min.js">
+    <link href="static/plugins/bootstrap-5.0.0/css/bootstrap.css" rel="stylesheet">
+    <script src="static/plugins/bootstrap-5.0.0/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <style>
     .index{
@@ -19,55 +25,71 @@
         /* 设置背景颜色，背景图加载过程中会显示背景色 */
         background-color: white;
     }
-    .index_1{
-        background-color: white;
-        height: 100px;
-        width: 100px;
-        border-radius:5px;
-    }
-    .index_2{
 
-        margin-top: 5%;
-        text-align: center;
-        margin-left: 60%;
-        background-image: url("/images/beijing.jpg");
-    }
-    .button_1{
-        background-color: deepskyblue;
-        margin: 10px;
-        border-radius:5px;
-        font-size:34px;
-        border: white;
-        box-shadow: -2px 2px 0 hsl(16, 20%, 100%);
-        color: white;
 
-    }
-    .button_2{
-        background-color: deepskyblue;
-        margin: 10px;
-        border-radius:5px;
-        font-size:34px;
-        border: white;
-        box-shadow: -2px 2px 0 hsl(16, 20%, 100%);
-        color: white;
-    }
 
 </style>
 <body class="index">
-<div class="index_1">
-    <h1>位置</h1>
-
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col p-3 bg-white text-black+150" style="height: 600px;width: 30px;border-radius: 5px;margin: 20px;background:#000; filter:alpha(opacity:30); opacity:0.9;visibility:visible">
+        欢迎来到MYBLOG！
+        开始博客之旅！
+        <!-- 轮播 -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+ 
+   <!-- 指示符 -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+  
+  <!-- 轮播图片 -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img decoding="async" src="static/images/beijing.jpg" class="d-block" style="width:100%">
+    </div>
+    <div class="carousel-item">
+      <img decoding="async" src="static/images/white.jpg" class="d-block" style="width:100%">
+    </div>
+    <div class="carousel-item">
+      <img decoding="async" src="static/images/beijing.jpg" class="d-block" style="width:100%">
+    </div>
+  </div>
+  
+  <!-- 左右切换按钮 -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
 </div>
-<div class="index_2" >
-    <h2 style="font-size: 20px">首页</h2>
-    <form action="/login">
-        <button type="submit" class="button_1">
-            <a href="templates/login.html">
-            登录
-            </a>
-        </button>
-        <button type="submit" class="button_2">注册</button>
-    </form>
+    </div>
+
+    <div class="col p-3 bg-white text-dark" style="margin: 100px;border-radius: 5px;background:#000; filter:alpha(opacity:30); opacity:0.9;">
+       <h1> Welcome to MYBLOG！
+       </h1>
+        <h2>开始我的博客之旅！</h2>
+            <div class="btn-group-lg" style="position: center;margin-left: 14%;margin-top: 15%">
+        <button type="button" class="btn btn-primary" style="height: 80px;width: 140px;font-size: 40px" onclick="window.location.href='templates/login.html'">登录</button>
+        <button type="button" class="btn btn-primary" style="height: 80px;width: 140px;font-size: 40px" onclick="window.location.href='templates/login.html'">注册</button>
+
+    </div>
+    </div>
+
+    <div class="col p-3 bg-white text-black" style="height: 600px;width: 30px;border-radius: 5px;margin: 20px;visibility:visible;background:#000; filter:alpha(opacity:30); opacity:0.9;"><!-- 网格系统+可视 -->
+        <img src="static/images/deng.jpg" width="80" height="80" style="margin-left: 40%;background:#000; filter:alpha(opacity:30); opacity:0.75;" class="rounded">
+        <h4 style="font-size: 40px;margin-left: 40%;margin-top: 20px">灵魂</h4>
+       <h2 style="font-size: 40px;margin-top: 50px"> 我们已经走得太远，以至于忘了当初为什么而出发。</h2>
+        <h3 style="font-size: 40px;margin-left: 40%">——纪伯伦</h3>
+    </div>
+  </div>
 </div>
 </body>
+
+
+
+
 </html>

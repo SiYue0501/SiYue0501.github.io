@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MYBLOG</title>
-    <link rel="stylesheet" href="static/plugins/bootstrap-5.0.0/css/bootstrap.css">
-    <link rel="stylesheet" href="static/plugins/bootstrap-5.0.0/js/bootstrap.bundle.min.js">
-    <link href="static/plugins/bootstrap-5.0.0/css/bootstrap.css" rel="stylesheet">
-    <script src="static/plugins/bootstrap-5.0.0/js/bootstrap.bundle.min.js"></script>
-    <link rel="shortcut icon" href="static/images/tubiao.jpeg" type="image/x-icon"/>
-
+    <link rel="stylesheet" href="/static/plugins/bootstrap-5.0.0/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/plugins/bootstrap-5.0.0/js/bootstrap.bundle.min.js">
+    <link href="/static/plugins/bootstrap-5.0.0/css/bootstrap.css" rel="stylesheet">
+    <script src="/static/plugins/bootstrap-5.0.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="shortcut icon" href="/static/images/tubiao.jpeg" type="image/x-icon"/>
 </head>
 <style>
     .index{
-
-        background-image: url("static/images/white.jpg");
+        background-image: url("/static/images/white.jpg");
         /* 背景图垂直、水平均居中 */
         background-position: center center;
         /* 背景图不平铺 */
@@ -54,33 +52,33 @@
 </nav>
 
 <div class="container-fluid mt-3">
-  <div class="row">
+  <div class="row"  style="margin-top: 0">
     <div class="col p-3 bg-white text-black+150" style="height: 600px;width: 30px;border-radius: 5px;margin: 20px;background:#000; filter:alpha(opacity:30); opacity:0.9;visibility:visible">
         <h1 style="font-size: 30px">欢迎来到MYBLOG！</h1>
 
         <!-- 轮播 -->
 <div id="demo" class="carousel slide" data-bs-ride="carousel">
- 
+
    <!-- 指示符 -->
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" style="margin: 5px;border-radius: 2px;border-color: white;background-color: white;filter:alpha(opacity:30); opacity:0.4;"></button>
     <button type="button" data-bs-target="#demo" data-bs-slide-to="1" style="margin: 5px;border-radius: 2px;border-color: white;background-color: white;filter:alpha(opacity:30); opacity:0.4;"></button>
     <button type="button" data-bs-target="#demo" data-bs-slide-to="2" style="margin: 5px;border-radius: 2px;border-color: white;background-color: white;filter:alpha(opacity:30); opacity:0.4;"></button>
   </div>
-  
+
   <!-- 轮播图片 -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img decoding="async" src="static/images/shenyi_1.jpeg" class="d-block" style="width:100%;height: 90%">
+      <img decoding="async" src="/static/images/shenyi_1.jpeg" class="d-block" style="width:100%;height: 90%" alt="lunbo">
     </div>
     <div class="carousel-item">
-      <img decoding="async" src="static/images/shenyi_2.jpeg" class="d-block" style="width:100%;height: 90%">
+      <img decoding="async" src="/static/images/shenyi_2.jpeg" class="d-block" style="width:100%;height: 90%" alt="lunbo">
     </div>
     <div class="carousel-item">
-      <img decoding="async" src="static/images/shenyi_3.jpeg" class="d-block" style="width:100%;height: 90%">
+      <img decoding="async" src="/static/images/shenyi_3.jpeg" class="d-block" style="width:100%;height: 90%" alt="lunbo">
     </div>
   </div>
-  
+
   <!-- 左右切换按钮 -->
   <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev" style="visibility: hidden">
     <span class="carousel-control-prev-icon"></span>
@@ -95,15 +93,22 @@
        <h1 style="margin-top: 20px"> Welcome to MYBLOG！
        </h1>
         <h2 style="margin-top: 20px">开始我的博客之旅！</h2>
-            <div class="btn-group-lg" style="position: center;margin-left: 14%;margin-top: 15%">
 
-        <button type="button" class="btn btn-primary" style="margin-left: 18%;height: 80px;width: 140px;font-size: 20px" onclick="window.location.href='templates/login.html'">进入首页</button>
+        <form action="/denglu" method="post">
+        <div class="btn-group-lg" style="position: center;margin-left: 14%;margin-top: 15%">
+            <button type="submit" class="btn btn-primary" style="margin-top: 0;margin-left: 7%;height: 80px;width: 240px;font-size: 20px">登录</button>
+       </div>
+        </form>
+                <form action="/zhuce" method="post">
+        <div class="btn-group-lg" style="position: center;margin-left: 14%;margin-top: 15%">
+            <button type="submit" class="btn btn-primary" style="margin-left: 7%;height: 80px;width: 240px;font-size: 20px">注册</button>
+       </div>
+        </form>
 
-    </div>
     </div>
 
     <div class="col p-3 bg-white text-black" style="height: 600px;width: 30px;border-radius: 5px;margin: 20px;visibility:visible;background:#000; filter:alpha(opacity:30); opacity:0.9;"><!-- 网格系统+可视 -->
-        <img src="static/images/deng.jpg" width="80" height="80" style="margin-left: 40%;background:#000; filter:alpha(opacity:30); opacity:0.75;" class="rounded">
+        <img src="/static/images/deng.jpg" width="80" height="80" style="margin-left: 40%;background:#000; filter:alpha(opacity:30); opacity:0.75;" class="rounded" alt="linghun">
         <h4 style="font-size: 40px;margin-left: 40%;margin-top: 20px">灵魂</h4>
        <h2 style="font-size: 40px;margin-top: 50px"> 我们已经走得太远，以至于忘了当初为什么而出发。</h2>
         <h3 style="font-size: 40px;margin-left: 40%;margin-top: 60px">——纪伯伦</h3>

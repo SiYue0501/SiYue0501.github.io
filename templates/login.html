@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>首页界面</title>
+    <title>登录界面</title>
 </head>
 <style>
     .login{
-        background-color: aqua;
+        background-color: white;
     }
     .login_1{
         text-align: center;
@@ -18,11 +18,11 @@
 <body class="login">
 <div class="login_1">
     <h2>登录</h2>
-    <form action="/login">
+    <form action="/login" method="post">
       <input placeholder="请输入账号" name="user"/>
       <input placeholder="请输入密码" name="password"/>
+        {{ msg }}
         <button type="submit">提交</button>
-        <button type="button" class="btn">按钮</button>
     </form>
 </div>
 </body>

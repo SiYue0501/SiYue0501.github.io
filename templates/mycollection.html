@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+		<!-- Start Page Title Area -->
+		<div class="page-title-area">
+			<div class="container">
+				<div class="page-title-content">
+					<h2>我的收藏</h2>
+					<ul>
+						<li>
+							<a href="/">
+								首页
+							</a>
+						</li>
+						<li class="active">我的收藏</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End Page Title Area -->
+
+		<!-- Start User Area -->
+		<section class="user-area ptb-100">
+			<div class="container">
+				<div class="row">
+                    <div class="col-lg-3"></div>
+					<div class="col-lg-12">
+                        <h3>
+{#                            {{ company.company_name }}#}
+                        </h3>
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr class="active">
+                                    <th>标题</th>
+                                    <th>收藏时间</th>
+                                    <th>操作</th>
+                                    <th>编辑</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                             {% for item in Items %}
+                                <tr>
+                                    <td>{{ item.Items.items_title }}</td>
+                                    <td>{{ item.Likes.items_time}}</td>
+                                    <td>
+                                        <a target="_blank" href="/detail/{{ item.Likes.items_targetid}}" >查看</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-primary" target="_blank" href="/mycollection?qx={{ item.Likes.id}}" >取消收藏</a>
+                                    </td>
+                                </tr>
+                             {% endfor %}
+                            </tbody>
+
+                        </table>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!-- End User Area -->
+
+{% endblock %}

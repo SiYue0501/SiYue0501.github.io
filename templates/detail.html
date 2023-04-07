@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+	<!-- Start Page Title Area -->
+		<div class="page-title-area">
+			<div class="container">
+				<div class="page-title-content">
+					<h2>{{ items.items_title|safe }}</h2>
+					<ul>
+						<li>
+							<a href="/">
+								首页
+							</a>
+						</li>
+						<li class="active">{{ items.items_title|safe }}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+        <style>
+        .hot-jobs-list .hot-jobs-img {
+                background-color: #ffffff;
+                -webkit-box-shadow: 0px 5px 20px 3px rgba(230, 233, 249, 0.9);
+                box-shadow: 0px 5px 20px 3px rgba(230, 233, 249, 0.9);
+                width: auto;
+                height: 366px;
+                display: inline-block;
+                text-align: center;
+                line-height: 100px;
+                border-radius: 20px 0 20px 0;
+            }
+        </style>
+		<section class="job-details-area ptb-100">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="hot-jobs-list">
+							<div class="row align-items-center">
+
+
+								<div class="col-lg-12">
+									<div class="hot-jobs-content">
+										<h3>{{ items.items_title|safe }}</h3>
+
+										<span class="sub-title"></span>
+                                        {% if items.img_url != None and items.img_url!='' %}
+                                         <img class="hot-jobs-img" src="/static/upload_files/{{ items.img_url }}" >
+                                        {% endif  %}
+
+                                        <span class="subscribe-content" style="min-height: 166px;display:block;">{{ items.items_info|safe }}</span>
+										<ul>
+											<li>
+                                                {{ user.nickname }}
+                                                {{ items.items_time }}
+                                            </li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="job-details-content" style="box-shadow: none">
+
+
+                            <h3>评论</h3>
+                            <div class="mt-30">
+                                 <form class="user-form" method="post">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label>请输入评论内容</label>
+                                                    <textarea placeholder="" class="form-control" name="items_info"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button class="default-btn btn-primary" type="submit">
+                                                    提交
+                                                </button>
+
+                                                {% if likes==None %}
+                                                <a href="/detail/{{ id }}?sc=true" class="btn btn-dark">收藏</a>
+                                                {%  else %}
+                                                <a class="btn btn-secondary">已收藏</a>
+{#                                                {{likes}}#}
+                                                {% endif %}
+
+                                            </div>
+                                        </div>
+                                </form>
+                            </div>
+
+                            {% for item in item2 %}
+                                <div  class="mt-30" style="padding: 15px; border-bottom: 1px solid #e5e5e5;box-shadow: 1px 3px 6px #d3d1d1;">
+                                    <div>
+                                        <span style="font-weight: bold" >{{ item.User.nickname }}</span>
+                                        <span  >{{ item.Comment.items_time.strftime("%Y-%m-%d ") }}</span>
+                                    </div>
+                                    <p style="text-indent: 18px;color: #8b8b8b;margin-top: 15px;">{{ item.Comment.items_info }}</p>
+                                </div>
+                              {% endfor %}
+
+
+						</div>
+
+					</div>
+
+					<div class="col-lg-4">
+						<div class="job-details-sidebar">
+
+
+							<div class="job-widget">
+								<h3>博客 简介</h3>
+
+								<ul class="overview">
+									<li>
+										发布日期
+										<span>:  {{ items.items_time.strftime("%Y-%m-%d ") }}</span>
+									</li>
+									<li>
+										作者
+										<span>: {{ user.nickname }}</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+        </section>
+		<!-- End Job Details Area -->
+{% endblock %}

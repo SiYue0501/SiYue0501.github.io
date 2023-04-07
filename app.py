@@ -1,36 +1,33 @@
 from flask import *
 from flask_bootstrap5 import Bootstrap
+from model.database import db
+from model.config import *
+from apps.views.user import user_bp
+from apps.views.items import user_bp2
+#from apps.views.admin import user_bp
+from apps.views.admin import admin_bp
+import apps.views.admin
+import json
+import pymysql
 
 app = Flask(__name__)
+app.secret_key = 'xxxxxxx'
+app.register_blueprint(user_bp)
+app.register_blueprint(user_bp2)
+app.register_blueprint(admin_bp)
+
 bootstrap = Bootstrap(app)
 
+app.config.from_object(DefaultConfig)
+app.secret_key = 'xxxxxxx'
+db.init_app(app)
 
 @app.route('/')  # 当点击提交时会跳转到login的路由地址
 def hello_world():  # put application's code here
-    return render_template("index_tem.html")
+    return render_template("start.html")
 
-
-@app.route("/denglu", methods=["POST", "GET"])
-def denglu():
-    return render_template("login.html")
-
-
-@app.route("/zhuce", methods=["POST", "GET"])
-def zhuce():
-    return render_template("register.html")
-
-
-@app.route("/login", methods=["POST", "GET"])
-def login():
-    if request.method == "POST":
-        name = request.form["user"]
-        pwd = request.form["password"]
-        if name == "11" and pwd == "11":
-            return render_template("shouye.html")
-        else:
-            return render_template("login.html", msg="账号或密码有误！")
-    else:
-        return render_template("404.html")
+# 字典
+users = [{'username': 'admin', 'password': 'asd123'}]  # https://blog.csdn.net/weixin_36380516/article/details/80008602
 
 
 if __name__ == '__main__':

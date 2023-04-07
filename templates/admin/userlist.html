@@ -1,0 +1,119 @@
+{% extends "/admin/master.html" %}
+{% block content %}
+<script>
+
+    var selectnav = document.querySelectorAll(".sidebar-nav-link");
+    selectnav[2].childNodes[1].setAttribute("class", "active")
+
+    $('body').attr('data-type', 'widgets')
+</script>
+
+
+<style>
+    .btn-default, .btn-success, .btn-error,.btn-maichu
+    {
+        text-align: center;
+        width: max-content;
+        padding: 2px 9px;
+        font-size:14px;
+        color: #fbfbfb;
+        cursor:pointer;
+    }
+    .btn-default
+    {
+        background: #6a6a6a;
+    }
+    .btn-success
+    {
+        background: #2d8b52;
+    }
+    .btn-error
+    {
+        background: #d3542e;
+    }
+    .btn-maichu
+    {
+        background:#336abb;
+    }
+
+</style>
+<div class="tpl-content-wrapper">
+    <div class="row-content am-cf">
+        <div class="row am-cf">
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                <div class="widget am-cf">
+                    <div class="widget-head am-cf">
+                        <div class="widget-title am-fl">用户管理</div>
+
+
+                    </div>
+
+                    <div class="am-u-sm-12" style="margin-bottom:20px;">
+                        <form class="am-form tpl-form-line-form" method="post" >
+                            <div class="row">
+                                <div class="am-u-sm-4">
+                                    <input type="text" name="keyword" class="tpl-form-input" placeholder="请输入标题搜索"  /></div>
+                                <div class="am-u-sm-8">
+                                    <input type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success " value="搜索" />
+{#                                    <a href="/admin/" class="am-btn am-btn-success tpl-btn-bg-color-success "  >添加</a>#}
+                                </div>
+
+
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="am-u-sm-12">
+                        <table width="100%" class="am-table am-table-compact am-table-bordered am-table-radius am-table-striped tpl-table-black ">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>昵称</th>
+                                <th>真实姓名</th>
+                                <th>身份证</th>
+                                <th>联系方式</th>
+                                <th>联系地址</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in Items %}
+                                    <tr>
+
+                                        <td class="am-text-middle">{{ item.id }}</td>
+                                        <td class="am-text-middle">{{ item.nickname }}</td>
+                                        <td  class="am-text-middle">{{ item.realname }}</td>
+                                        <td  class="am-text-middle">{{ item.idcard }}</td>
+                                        <td  class="am-text-middle">{{ item.phone }}</td>
+                                        <td  class="am-text-middle">{{ item.address }}</td>
+
+                                        <td  class="am-text-middle">
+                                            <div class="tpl-table-black-operation">
+{#                                                <a href="/admin/indexedit/{{ item.id }}">#}
+{#                                                <i class="am-icon-pencil"></i> 编辑#}
+{#                                                </a>#}
+                                                <a href="javascript:confirm('你确定要删除吗？')?location.href='/admin/userlist?delete={{ item.id }}':console.log('...')" class="tpl-table-black-operation-del">
+                                                <i class="am-icon-trash"></i> 删除
+                                                </a>
+                                            </div>
+                                        </td>
+
+
+                                    </tr>
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

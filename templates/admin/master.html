@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <title></title>
+  <meta name="keywords" content="index"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="renderer" content="webkit"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+  <link rel="stylesheet" href="/static/admin/css/amazeui.min.css" />
+  <link rel="stylesheet" href="/static/admin/css/amazeui.datatables.min.css" />
+  <link rel="stylesheet" href="/static/admin/css/app.css"/>
+  <script src="http://cdn.bootcss.com/echarts/3.3.2/echarts.min.js"></script>
+  <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+</head>
+<body data-type="index">
+<script src="/static/admin/js/theme.js"></script>
+
+<div class="am-g tpl-g">
+  <!-- 头部 -->
+  <header>
+    <!-- logo -->
+    <div class="am-fl tpl-header-logo">
+      <a href="javascript:;">
+        后台管理系统
+      </a>
+    </div>
+    <!-- 右侧内容 -->
+    <div class="tpl-header-fluid">
+      <!-- 侧边切换 -->
+      <div class="am-fl tpl-header-switch-button am-icon-list">
+                    <span>
+
+                </span>
+      </div>
+
+      <!-- 其它功能-->
+      <div class="am-fr tpl-header-navbar">
+        <ul>
+          <!-- 欢迎语 -->
+          <li class="am-text-sm tpl-header-navbar-welcome">
+            <a href="javascript:;">欢迎你, <span>
+              admin
+            </span> </a>
+          </li>
+
+          <!-- 退出 -->
+          <li class="am-text-sm">
+            <a href="javascript:confirm('确定要退出吗？')?location.href='/admin/login':console.log('取消了');">
+              <span class="am-icon-sign-out"></span> 退出
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </header>
+  <div class="left-sidebar" style="height: 100vh;">
+    <!-- 用户信息 -->
+    <div class="tpl-sidebar-user-panel">
+      <div class="tpl-user-panel-slide-toggleable">
+        <div class="tpl-user-panel-profile-picture">
+          <img src="/static/admin/img/default.jpg" alt="">
+        </div>
+        <span class="user-panel-logged-in-text">
+                        <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+                      admin
+                    </span>
+      </div>
+    </div>
+
+    <!-- 菜单 -->
+    <ul class="sidebar-nav">
+
+{#      <li class="sidebar-nav-link">#}
+{#        <a href="#" >#}
+{#          <i class="am-icon-home sidebar-nav-link-logo"></i> 系统信息#}
+{#        </a>#}
+{#      </li>#}
+
+
+      <li class="sidebar-nav-link">
+        <a href="/admin">
+          <i class="am-icon-newspaper-o  sidebar-nav-link-logo"></i> 博客管理
+        </a>
+      </li>
+        <li class="sidebar-nav-link">
+        <a href="/admin/comment">
+          <i class="am-icon-user-plus sidebar-nav-link-logo"></i> 评论管理
+        </a>
+      </li>
+
+      <li class="sidebar-nav-link">
+        <a href="/admin/userlist">
+          <i class="am-icon-user sidebar-nav-link-logo"></i> 用户管理
+        </a>
+      </li>
+
+
+    </ul>
+  </div>
+
+  {% block content %}{% endblock %}
+</div>
+<script src="http://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js"></script>
+<script src="/static/admin/js/amazeui.datatables.min.js"></script>
+<script src="/static/admin/js/dataTables.responsive.min.js"></script>
+
+<script src="/static/admin/js/app.js"></script>
+</body>
+</html>

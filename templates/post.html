@@ -7,14 +7,14 @@
 		<div class="page-title-area">
 			<div class="container">
 				<div class="page-title-content">
-					<h2>用户登录</h2>
+					<h2>发布博客</h2>
 					<ul>
 						<li>
 							<a href="index.html">
 								首页
 							</a>
 						</li>
-						<li class="active">用户登录</li>
+						<li class="active">发布博客</li>
 					</ul>
 				</div>
 			</div>
@@ -26,46 +26,43 @@
 			<div class="container">
 				<div class="row">
                     <div class="col-lg-3"></div>
-					<div class="col-lg-6">
-						<div class="user-form-content log-in-50">
-							<h3>登录您的账号</h3>
+					<div class="col-lg-8">
+					    <div class="user-form-content">
+							<h3>发布博客</h3>
 
-							<form class="user-form" method="post">
+							<form class="user-form" enctype="multipart/form-data" method="post">
 								<div class="row">
-									<div class="col-12">
+									<div class="col-8">
 										<div class="form-group">
-											<label>用户名</label>
-											<input class="form-control" type="text" name="account">
+											<label>标题</label>
+											<input class="form-control" type="text" name="items_title">
 										</div>
 									</div>
 
 									<div class="col-12">
 										<div class="form-group">
-											<label>密码</label>
-											<input class="form-control" type="password" name="pwd">
+											<label>博客内容</label>
+											<textarea   class="form-control" name="items_info" ></textarea>
+										</div>
+									</div>
+
+                                    <div class="col-12">
+										<div class="form-group">
+											<label>图片(可选)</label>
+											<input type="file" name="file" >
 										</div>
 									</div>
 
 									<div class="col-12">
-										<button class="default-btn" type="submit">
-										    登录
+										<button class="default-btn register" type="submit">
+											发布
 										</button>
 									</div>
 
-									<div class="col-12">
-										<span class="or">--</span>
-									</div>
-
-
-
-									<div class="col-12">
-										<p class="create">
-                                            还没有账号？ <a href="/register">注册</a>
-                                        </p>
-									</div>
 								</div>
 							</form>
 						</div>
+
 					</div>
 
 				</div>

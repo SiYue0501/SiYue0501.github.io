@@ -13,7 +13,7 @@ user_bp2 = Blueprint('items', __name__)
 @user_bp2.route('/home', methods=['GET', 'POST'])
 def index():
     ItemsList = db.session.query(Items.user_id, Items, User). \
-        filter(Items.user_id == User.id).all()
+        filter(Items.user_id == User.id).order_by(Items.items_time.desc()).all()
 
     ItemsList2 = db.session.query(Items.user_id, Items, User). \
         filter(

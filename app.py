@@ -4,7 +4,6 @@ from model.database import db
 from model.config import *
 from apps.views.user import user_bp
 from apps.views.items import user_bp2
-#from apps.views.admin import user_bp
 from apps.views.admin import admin_bp
 import apps.views.admin
 import json
@@ -22,12 +21,10 @@ app.config.from_object(DefaultConfig)
 app.secret_key = 'xxxxxxx'
 db.init_app(app)
 
+
 @app.route('/')  # 当点击提交时会跳转到login的路由地址
 def hello_world():  # put application's code here
     return render_template("start.html")
-
-# 字典
-users = [{'username': 'admin', 'password': 'asd123'}]  # https://blog.csdn.net/weixin_36380516/article/details/80008602
 
 
 if __name__ == '__main__':
